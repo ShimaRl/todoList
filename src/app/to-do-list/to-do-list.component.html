@@ -1,0 +1,14 @@
+<div (dragover)="allowDrop($event)" (drop)="drop($event)">
+  <div draggable="true" (dragstart)="drag($event)" data-toggle="modal" data-target="#myModal" id="{{todoArrayElement.position}}" (click)="openDialog($event)" class="rounded mt-2 clearfix pr-1 pl-1 bg-light border border-secondary" [ngClass]="{'text-secondary': todoArrayElement.isDone === false, 'text-success': todoArrayElement.isDone === true}">
+    <p class="m-0">{{todoArrayElement.content}}
+      <a href="#" (click)="removeToDo($event)">
+        <span class="glyphicon glyphicon-remove float-right text-danger ml-1"></span>
+      </a>
+
+      <a href="#" (click)="setAsDoneToDo($event)">
+          <span class="glyphicon glyphicon-ok float-right text-success ml-1"></span>
+      </a>
+    </p>
+  </div>
+</div>
+
